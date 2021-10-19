@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {  useLayoutEffect, useRef, useState } from "react";
 import { useLandingStyles } from "../assets/styles/index.styles";
 import { Shoe } from "./Shoe";
 import { Underlay } from "./UnderLay";
@@ -13,7 +13,7 @@ const landingVariants = {
     },
     close : {
         height : 0,
-        opacity : 0
+        opacity : 0,
     }
 }
 
@@ -22,9 +22,19 @@ export const Landing = () => {
     const [canSwitchPage , setCanSwicthPage] = useState<boolean>(false)
     const classes = useLandingStyles();
     const isBtnClicked = useSelector((store : ReducerRootStateType) => store.discoverBtn);
+    const ref = useRef<HTMLDivElement>(null);
+
+    //remove canvas from the dom to stop three animation
+    useLayoutEffect(() => {
+        const parent = ref.current
+        if(canSwitchPage && parent && parent.lastElementChild){
+            parent.removeChild(parent.lastElementChild);
+        }
+    },[canSwitchPage]);
 
     return(
         <motion.div 
+            ref = {ref}
             className = {classes.root}
             variants = {landingVariants} 
             initial = 'open'

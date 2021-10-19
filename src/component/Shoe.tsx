@@ -24,7 +24,7 @@ const Model = (props : ModelPropsT) => {
         const time = clock.getElapsedTime();
         if(modelRef.current){
             const x =  -0.1* Math.sin(time - Math.PI/2) + 18;
-            const y =   20 * Math.cos(time + Math.PI/2) + 10 ;
+            const y =   20 * Math.cos(time + Math.PI/2) + 20 ;
             const vec = new Vector3(x, y, 300);
             modelRef.current.position.lerp(vec, 0.02);
             // camera.rotation.set(x, y, 0);
@@ -32,16 +32,14 @@ const Model = (props : ModelPropsT) => {
         }
         //animation zoom in camera before page transition
         //move camera on y axis to ajust shoe position
-        if(props.isBtnClicked && (camera.zoom < 30)){
-            camera.zoom +=  .1 * Math.sqrt(time);
-            camera.position.y += .25;
+        if(props.isBtnClicked && (camera.zoom < 16)){
+            camera.zoom +=  .09 * Math.sqrt(time);
+            camera.position.y += .15;
             camera.updateProjectionMatrix();
-            //when camera is close enough we can swicth to home scene
-            //props.setCanSwicthPage(true)
         }
+        //when camera is close enough we can swicth to home scene
         if(camera.zoom > 15)
-        props.setCanSwicthPage(true)
-        
+            props.setCanSwicthPage(true)
     });
 
     return (
@@ -62,6 +60,7 @@ export const Shoe = (props: ShoePropsT) => {
 
             <Canvas
                 camera = {{
+                    aspect : window.innerWidth / window.innerHeight,
                     near: 0.1,
                     far: 10000,
                     fov : 80,
