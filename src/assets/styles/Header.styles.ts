@@ -4,10 +4,10 @@ export const useHeaderStyles  = makeStyles(theme => ({
     root: {
         height : '60vh',
         position : 'absolute',
-        // margin : '100px 40px',
         display : 'flex',
+        justifyContent : 'flex-end',
         width : '100%',
-        // alignItems : 'center',
+        alignItems : 'center',
         // border : '2px solid red',
         //hiding scrollbar on firefox
         scrollbarWidth : 'none',

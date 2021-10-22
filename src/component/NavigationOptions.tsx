@@ -1,14 +1,18 @@
-import { useNavigatoinOptionsStyle } from "../assets/styles/index.styles"
+import { useNavigationOptionsStyle } from "../assets/styles/index.styles"
 
-
-export const NavigationOptions = () => {
-    const classes = useNavigatoinOptionsStyle();
+type OptionsProps = {
+    height: string,
+    width : string
+}
+export const NavigationOptions = ({height, width} : OptionsProps) => {
+    const classes = useNavigationOptionsStyle();
 
     return(
-        <ul className = {classes.list}>
-            <li className = {classes.item}>new realeases</li>
-            <li className = {classes.item}>categories</li>
-            <li className = {classes.item}></li>
+        <ul className = {classes.list} style = {{height, width}}>
+            <li role = "button" className = {classes.item}>New realeases</li>
+            <li role = "button" className = {classes.item}>Men</li>
+            <li role = "button" className = {classes.item}>Women</li>
+            <li role = "button" className = {classes.item}>Kids</li>
         </ul>
     )
 }

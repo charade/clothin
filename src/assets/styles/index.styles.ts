@@ -6,7 +6,7 @@ import { useHomeStyle } from "./Home.styles";
 import { useMainStyle } from "./Main.styles";
 import { useJustDoItSceneStyle } from "./JustDoItScene.styles";
 import { usePoseStyle } from './Pose.styles';
-import { useNavigatoinOptionsStyle } from "./NavigationOptions.styles"
+import { useNavigationOptionsStyle } from "./NavigationOptions.styles"
 export {
     useLandingStyles,
     useUnderlayStyle,
@@ -16,5 +16,5 @@ export {
     useMainStyle,
     useJustDoItSceneStyle,
     usePoseStyle,
-    useNavigatoinOptionsStyle
+    useNavigationOptionsStyle
 }

@@ -36,6 +36,7 @@ export const Header = () => {
                 img = { poseImg }
             />
             <Caption lines = {["Define", "new", "Codes"]}/>
+            <NavigationOptions height = "20%" width = "37%"/>
       </motion.div>
     )
 }
