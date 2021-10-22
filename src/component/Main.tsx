@@ -6,7 +6,7 @@ export const Main = () => {
 
     return(
         <main className = {classes.container}>
-
+            
         </main>
     )
 }

@@ -5,6 +5,8 @@ import { useHeaderStyles } from "./Header.styles";
 import { useHomeStyle } from "./Home.styles";
 import { useMainStyle } from "./Main.styles";
 import { useJustDoItSceneStyle } from "./JustDoItScene.styles";
+import { usePoseStyle } from './Pose.styles';
+import { useContainerStyle } from "./Container.styles";
 
 export {
     useLandingStyles,
@@ -14,4 +16,6 @@ export {
     useHomeStyle,
     useMainStyle,
     useJustDoItSceneStyle,
+    usePoseStyle,
+    useContainerStyle
 }

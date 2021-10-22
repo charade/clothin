@@ -2,8 +2,7 @@ import { useRef } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import  { useGLTF, OrbitControls } from '@react-three/drei';
 import { Suspense } from "react";
-import  { Group, MathUtils, Vector3 } from 'three';
-import { useMediaQuery } from "@material-ui/core";
+import  { Group, Vector3 } from 'three';
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { useShoeStyle } from "../assets/styles/index.styles"
 
@@ -17,8 +16,6 @@ type ModelPropsT = {
 const Model = (props : ModelPropsT) => {
     const model = useGLTF('/shoes/scene.gltf');
     const modelRef = useRef<Group>(null);
-    const isScreenMobile = useMediaQuery('(max-width : 800px)');
-    
 
     useFrame(({camera, clock}) => {
         const time = clock.getElapsedTime();
@@ -47,11 +44,13 @@ const Model = (props : ModelPropsT) => {
             <primitive object = {model.scene}/>
         </group>
     )
-}
+};
+
 type ShoePropsT = {
     isBtnClicked : boolean,
     setCanSwicthPage : (canSwitch : boolean) => void
-}
+};
+
 export const Shoe = (props: ShoePropsT) => {
     const classes = useShoeStyle();
 

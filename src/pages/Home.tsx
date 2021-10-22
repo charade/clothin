@@ -1,17 +1,20 @@
+import { useEffect } from 'react';
 import { useHomeStyle } from "../assets/styles/index.styles";
 import { Header } from "../component/Header";
 import { Main } from "../component/Main";
-import { JustDoItScene } from "../component/JustDoItScene";
 import { Landing} from "../component/Landing";
 export const Home = () => {
     const classes = useHomeStyle();
 
+    useEffect(() => {
+        window.addEventListener('click', (e : MouseEvent) => console.log(e))
+    },[]);
+
     return(
         <div className = {classes.root}>
-            <JustDoItScene />
             <Landing />
-            {/* <Header />
-            <Main /> */}
+            <Header />
+            {/* <Main /> */}
         </div>
     )
 }

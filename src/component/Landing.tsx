@@ -1,21 +1,10 @@
-import {  useLayoutEffect, useRef, useState } from "react";
+import {  useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useLandingStyles } from "../assets/styles/index.styles";
 import { Shoe } from "./Shoe";
 import { Underlay } from "./UnderLay";
 import { useSelector } from "react-redux";
 import { ReducerRootStateType } from "../state/store";
-import { motion } from "framer-motion";
-
-const landingVariants = {
-    open : {
-        height : '100%',
-        opacity : 1
-    },
-    close : {
-        height : 0,
-        opacity : 0,
-    }
-}
+import { useSpring, animated } from "react-spring";
 
 export const Landing = () => {
     //wait till camera is close enough to the shoe to exit landing on animate 
@@ -23,7 +12,11 @@ export const Landing = () => {
     const classes = useLandingStyles();
     const isBtnClicked = useSelector((store : ReducerRootStateType) => store.discoverBtn);
     const ref = useRef<HTMLDivElement>(null);
-
+    //animate exit on click discover button
+    const [styles, setStyles] = useSpring(() =>({
+            opacity :  1,
+            height : '100%'
+    }));
     //remove canvas from the dom to stop three animation
     useLayoutEffect(() => {
         const parent = ref.current
@@ -32,16 +25,22 @@ export const Landing = () => {
         }
     },[canSwitchPage]);
 
+    //wait before animating out landing after discover boutton is clicked
+    useEffect(() => {
+        if(isBtnClicked){
+            setTimeout(() => setStyles.start({opacity : 0, height : "0"}), 200)
+        }
+    },[isBtnClicked, setStyles]);
+
+   
     return(
-        <motion.div 
+        <animated.div 
             ref = {ref}
             className = {classes.root}
-            variants = {landingVariants} 
-            initial = 'open'
-            animate = {canSwitchPage ? 'close' : 'open'}
+            style = { styles }
         >
             <Underlay />
             <Shoe isBtnClicked = { isBtnClicked } setCanSwicthPage = {setCanSwicthPage}/>
-        </motion.div>
+        </animated.div>
     )
 }
