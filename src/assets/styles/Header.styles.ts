@@ -2,10 +2,12 @@ import { makeStyles } from "@material-ui/core";
 
 export const useHeaderStyles  = makeStyles(theme => ({
     root: {
-        height : '100vh',
+        height : '60vh',
+        position : 'absolute',
         // margin : '100px 40px',
         display : 'flex',
-        alignItems : 'center',
+        width : '100%',
+        // alignItems : 'center',
         // border : '2px solid red',
         //hiding scrollbar on firefox
         scrollbarWidth : 'none',
@@ -16,24 +18,37 @@ export const useHeaderStyles  = makeStyles(theme => ({
     },
     block : {
         position : 'absolute',
-        left : "55%",
+        left : "15%",
         display : 'flex',
         alignitem : 'center',
         flexDirection : 'column',
         justifyContent : 'space-between',
         maxWidth : '50%',
+        height : '250px',
+        padding: '20px',
+        // background : 'rgb(16, 24, 43)',
+        // background : 'white',
+
+        // borderTopLeftRadius :  '500px 500px',
+        // borderBottomRightRadius :  '400px 500px',
+        // borderTopRightRadius : '500px 500px',
+        // borderBottomLeftRadius : '600px 500px',
     },
     caption : {
-        fontFamily : theme.typography.fontFamily ,
-        fontSize : '6rem',
-        fontWeight : 800,
-        width : '100%',
+        // fontFamily : theme.typography.fontFamily?.big,
+        // letterSpacing : '-1px',
+        fontSize : '7rem',
+        fontWeight : 900,
         overflow : 'hidden',
-        lineHeight : '69px',
+        lineHeight : '72px',
         // border : '1px solid red',
         // color : 'rgb(229, 158, 55)',
         color : 'white',
-        textWrap : 'wrap',
-        
+        // '&::first-letter' : {
+        //     color : 'white'
+        // }
+        '&:not(&:last-child)' : {
+            margin : '-8px 0',
+        }
     }
 }))

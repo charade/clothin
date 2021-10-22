@@ -40,7 +40,7 @@ const Model = (props : ModelPropsT) => {
     });
 
     return (
-        <group position = {[0, 0, 500]} ref = {modelRef} rotation = {[0, 0, -.3]}>
+        <group dispose = {null} position = {[0, 0, 500]} ref = {modelRef} rotation = {[0, 0, -.3]}>
             <primitive object = {model.scene}/>
         </group>
     )
@@ -56,7 +56,6 @@ export const Shoe = (props: ShoePropsT) => {
 
     return(
         <div className = {classes.root}>
-
             <Canvas
                 camera = {{
                     aspect : window.innerWidth / window.innerHeight,

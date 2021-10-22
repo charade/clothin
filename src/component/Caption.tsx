@@ -1,41 +1,43 @@
 import { useHeaderStyles } from "../assets/styles/Header.styles";
-import { motion, Variants } from 'framer-motion';
 import { useSelector } from "react-redux";
 import { ReducerRootStateType } from "../state/store";
+import { motion, Variants } from "framer-motion";
 
 type CaptionType = {
-    text : string,
+    lines : string[],
 };
 
-const variants : Variants = {
+const captionVariants : Variants = {
     open : {
-        height : '100%',
+        filter : 'blur(0)',
         opacity : 1,
         transition : {
-            delay : 1,
-            duration : .4,
-            mass : 100
+            delay : .6,
+            duration : .5,
         }
     },
     close : {
-        height: "0",
+        filter : 'blur(20px)',
         opacity : 0
     }
 };
 
-export const Caption = ({text} : CaptionType) => {
-
-    const classes = useHeaderStyles();
+export const Caption = ({lines} : CaptionType) => {
     const isBtnClicked = useSelector((store : ReducerRootStateType) => store.discoverBtn);
 
+    const classes = useHeaderStyles();
     return(
-        <motion.span 
-            className = {classes.caption}
-            variants = { variants } 
-            animate = {isBtnClicked ? "open" : "close"}
-            initial = "close"
-        >
-            { text }
-        </motion.span>
+        <motion.h2 
+                className = {classes.block} 
+                style = {{top : '10%'}}
+                variants = { captionVariants }
+                animate = { isBtnClicked ? "open" : "close" }
+            >
+            { lines.map(line => (
+                <span className = {classes.caption}>
+                    { line }
+                </span>
+            ))}
+        </motion.h2>
     )
 }

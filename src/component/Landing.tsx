@@ -5,6 +5,7 @@ import { Underlay } from "./UnderLay";
 import { useSelector } from "react-redux";
 import { ReducerRootStateType } from "../state/store";
 import { useSpring, animated } from "react-spring";
+import { unmountComponentAtNode } from "react-dom";
 
 export const Landing = () => {
     //wait till camera is close enough to the shoe to exit landing on animate 
@@ -15,20 +16,20 @@ export const Landing = () => {
     //animate exit on click discover button
     const [styles, setStyles] = useSpring(() =>({
             opacity :  1,
-            height : '100%'
     }));
     //remove canvas from the dom to stop three animation
     useLayoutEffect(() => {
-        const parent = ref.current
-        if(canSwitchPage && parent && parent.lastElementChild){
-            parent.removeChild(parent.lastElementChild);
+        if(canSwitchPage && ref.current && ref.current.lastElementChild){
+            ref.current.style.display = "none";
+            unmountComponentAtNode(ref.current.lastElementChild);
+            ref.current.removeChild(ref.current.lastElementChild);
         }
     },[canSwitchPage]);
 
     //wait before animating out landing after discover boutton is clicked
     useEffect(() => {
         if(isBtnClicked){
-            setTimeout(() => setStyles.start({opacity : 0, height : "0"}), 200)
+            setTimeout(() => setStyles.start({opacity : 0}), 200)
         }
     },[isBtnClicked, setStyles]);
 

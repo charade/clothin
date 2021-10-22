@@ -6,7 +6,7 @@ import { useMediaQuery } from "@material-ui/core";
 
 const variants : Variants = {
     open:  {
-        width : "30%",
+        width : "20%",
         opacity : 1,
         transition : {
             type : 'spring',

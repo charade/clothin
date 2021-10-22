@@ -9,7 +9,7 @@ import { createTheme, ThemeProvider, Theme } from '@mui/material';
 
 const theme : Theme = createTheme({
   typography : {
-    fontFamily : "Montserrat Alternates"
+    fontFamily : ["Montserrat Alternates", "Bold Font"].join(',')
   }
 })
 

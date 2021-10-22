@@ -3,6 +3,11 @@
   src: url(./assets/fonts/Montserrat_Alternates/MontserratAlternates-Black.ttf);
 }
 
+@font-face {
+  font-family: "Bold Font";
+  src: url(./assets/fonts/theboldfont.ttf);
+}
+
 body, html {
   margin: 0;
   padding: 0;
