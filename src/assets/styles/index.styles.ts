@@ -1,20 +1,27 @@
 import { useLandingStyles } from "./Landing.styles";
 import { useUnderlayStyle } from "./Underlay.styles";
 import { useShoeStyle } from './Shoe.styles';
-import { useHeaderStyles } from "./Header.styles";
 import { useHomeStyle } from "./Home.styles";
 import { useMainStyle } from "./Main.styles";
 import { useJustDoItSceneStyle } from "./JustDoItScene.styles";
-import { usePoseStyle } from './Pose.styles';
-import { useNavigationOptionsStyle } from "./NavigationOptions.styles"
+import { useNavigationOptionsStyle } from "./NavigationOptions.styles";
+import { useNavbarStyle } from "./Navbar.styles";
+import { useCaptionStyle } from "./Caption.styles";
+import { useMediaStyle }  from './Media.styles';
+import { useSearchBarStyle } from './SearchBar.styles';
+import { useNavPaneStyle } from "./NavPane.style";
+
 export {
     useLandingStyles,
     useUnderlayStyle,
     useShoeStyle,
-    useHeaderStyles,
     useHomeStyle,
     useMainStyle,
     useJustDoItSceneStyle,
-    usePoseStyle,
-    useNavigationOptionsStyle
+    useNavigationOptionsStyle,
+    useNavbarStyle,
+    useCaptionStyle,
+    useMediaStyle,
+    useSearchBarStyle,
+    useNavPaneStyle
 }

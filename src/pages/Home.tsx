@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 import { useHomeStyle } from "../assets/styles/index.styles";
-import { Header } from "../component/Header";
-import { Main } from "../component/Main";
-import { Landing} from "../component/Landing";
+import { Main } from "../components/Main";
+import { Landing} from "../components/Landing";
 export const Home = () => {
     const classes = useHomeStyle();
 
@@ -13,8 +12,7 @@ export const Home = () => {
     return(
         <div className = {classes.root}>
             <Landing />
-            <Header />
-            {/* <Main /> */}
+            <Main />
         </div>
     )
 }

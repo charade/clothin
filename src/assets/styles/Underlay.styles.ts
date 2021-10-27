@@ -37,7 +37,7 @@ export const useUnderlayStyle = makeStyles(theme => ({
         alignItems : 'center',
         // justifyContent : 'center',
         transform :'translateX(-50%)',
-        zIndex : 5,
+        zIndex : 10,
         width : '200px',
         height : '200px',
         // border: '2px solid',
