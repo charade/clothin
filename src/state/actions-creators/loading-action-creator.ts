@@ -5,7 +5,7 @@ import { Actions } from "../actions";
 export const setLoading = (isLoading : boolean) => {
     return (dispatch : Dispatch<LoadingType>) =>{
         dispatch({
-            type : Actions.ISLOADING,
+            type : Actions.IS_LOADING,
             payload : isLoading
         })
     }

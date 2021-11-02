@@ -7,7 +7,7 @@ export type LoadingType = {
 
 const loadingReducer = (state: boolean = true, action : LoadingType) => {
     switch(action.type){
-        case Actions.ISLOADING : return action.payload;
+        case Actions.IS_LOADING : return action.payload;
         default : return state
     }
 }   

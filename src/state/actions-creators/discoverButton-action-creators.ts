@@ -5,7 +5,7 @@ import { Dispatch } from "react";
 export const setDiscoverClicked = (clicked : boolean) => {
     return(dispatch : Dispatch<DscvrBtnActionType>) => {
         dispatch({
-            type : Actions.ISDISCOVERBTNCLIKED,
+            type : Actions.IS_DISCOVERBTN_CLIKED,
             payload : clicked
         })
     }

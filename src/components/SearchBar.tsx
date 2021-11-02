@@ -15,9 +15,7 @@ export const SearchBar = () => {
     //on submit form
 
     return(
-        <form
-            className = { classes.form }
-        >
+        <form className = { classes.form }>
             <input
                 className = { classes.textField }
                 onChange = { handleChange }

@@ -6,9 +6,7 @@ export const Media = () => {
     const classes = useMediaStyle();
 
     return(
-        <List
-            className = {classes.list}
-        >
+        <List className = {classes.list}>
             <ListItem>
                 <ShoppingCart />
             </ListItem>

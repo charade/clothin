@@ -16,7 +16,9 @@ body, html {
   font-family: 'Avenir Next';
   overscroll-behavior: none;
 }
-
+*{
+  box-sizing: border-box;
+}
 #root {
   height : 100%;
 

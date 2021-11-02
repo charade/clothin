@@ -1,10 +1,12 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import { loadingReducer, discoverBtnReducer } from "./reducers";
+import { loadingReducer, discoverBtnReducer, suggestionsReducer, brandsReducer } from "./reducers";
 
 const reducers = combineReducers({
     isLoading : loadingReducer,
-    discoverBtn : discoverBtnReducer
+    discoverBtn : discoverBtnReducer,
+    suggestions : suggestionsReducer,
+    brands : brandsReducer
 })
 
 export const store = createStore(reducers, applyMiddleware(thunk));

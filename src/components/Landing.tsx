@@ -5,7 +5,6 @@ import { Underlay } from "./UnderLay";
 import { useSelector } from "react-redux";
 import { ReducerRootStateType } from "../state/store";
 import { useSpring, animated } from "react-spring";
-import { unmountComponentAtNode } from "react-dom";
 
 export const Landing = () => {
     //wait till camera is close enough to the shoe to exit landing on animate 
@@ -21,18 +20,14 @@ export const Landing = () => {
     useLayoutEffect(() => {
         if(canSwitchPage && ref.current && ref.current.lastElementChild){
             ref.current.style.display = "none";
-            // unmountComponentAtNode(ref.current.lastElementChild);
-            // ref.current.removeChild(ref.current.lastElementChild);
         }
     },[canSwitchPage]);
-
     //wait before animating out landing after discover boutton is clicked
     useEffect(() => {
         if(isBtnClicked){
             setTimeout(() => setStyles.start({opacity : 0}), 200)
         }
     },[isBtnClicked, setStyles]);
-
    
     return(
         <animated.div 

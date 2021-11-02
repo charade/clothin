@@ -1,7 +1,7 @@
 import { AppBar, Toolbar } from "@material-ui/core";
 import { useNavbarStyle } from "../assets/styles/index.styles"
 import { NavigationOptions } from './NavigationOptions';
-import { SearchBar } from "./SearchBar";
+// import { SearchBar } from "./SearchBar";
 import { Media } from './Media';
 export const Navbar = () => {
     const classes = useNavbarStyle();
@@ -11,7 +11,7 @@ export const Navbar = () => {
             color = 'transparent'
         >
             <Toolbar component = 'div' className = {classes.toolbar}>
-                <SearchBar />
+                {/* <SearchBar />  filter?? */}
                 <NavigationOptions />
                 <Media />
             </Toolbar>

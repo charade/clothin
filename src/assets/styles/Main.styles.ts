@@ -13,7 +13,7 @@ export const useMainStyle = makeStyles(theme => ({
         flexDirection : 'column',
         // padding : '150px 0',
         zIndex : 7,
-        background : 'rgb(211, 85, 80)'
+        background :'white', /* 'linear-gradient(40deg ,rgb(211, 85, 80) 70%, rgb(14, 25,44))' */
 
     },
 }))

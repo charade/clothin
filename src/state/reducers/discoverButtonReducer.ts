@@ -7,7 +7,7 @@ export type DscvrBtnActionType = {
 
 const  discoverBtnReducer = (state : boolean = false, action : DscvrBtnActionType) =>{
     switch(action.type){
-        case Actions.ISDISCOVERBTNCLIKED : return action.payload
+        case Actions.IS_DISCOVERBTN_CLIKED : return action.payload
         default : return state
     }
 }

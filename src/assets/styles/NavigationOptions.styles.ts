@@ -13,7 +13,7 @@ export const useNavigationOptionsStyle = makeStyles(theme => ({
     item : {
         cursor : 'pointer',
         fontSize : '1.8rem',
-        color : 'white',
+        // color : 'white',
         margin : '15px'
         // border : '1px solid white'
     }
