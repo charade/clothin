@@ -11,19 +11,19 @@ export type ItemsType =  {
     price : string,
     gender : string
 }
-type FilterType = {
+export type FilterType = {
     genre ?: string;
     maxPrice ?: number;
     brand ?: string
 };
-//filtering sneakers
-export const filterSneakers = (params : FilterType) => {
-    return request.get(`/get-all?gender=${params.genre}&maxPrice=${params.maxPrice}&brand=${params.brand}`);
-}
+//filtering sneakers by gender
+export const getGender = (gender: string) => request.get(`/get-gender/${ gender }`);
+//filtering sneakers by brand
+export const getABrand = (brand : string) => request.get(`/get-a-brand/${brand}`);
 //request all then get 1 to 5 sneaker(s) randomly
 export const suggestionsLoader  = async() => {
     try{
-        let sneakers : AxiosResponse<ItemsType[], any> =  await request.get('/get-all');
+        let sneakers : AxiosResponse<ItemsType[], any> =  await request.get('/');
         const results = sneakers.data;
         const randomSneakers : ItemsType[] = [];
         /* loop through sneakers and generate random */

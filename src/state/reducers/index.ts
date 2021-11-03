@@ -1,10 +1,13 @@
 import loadingReducer from "./loadingReducer";
 import discoverBtnReducer from "./discoverButtonReducer";
-import { suggestionsReducer } from "./suggestionsReducer";
-import { brandsReducer } from "./brandsReducer"
+import { itemsReducer } from "./itemsReducer";
+import { brandsReducer } from "./brandsReducer";
+import { categoryReducer } from "./categotyReducer";
+
 export {
     loadingReducer,
     discoverBtnReducer,
-    suggestionsReducer,
-    brandsReducer
+    itemsReducer,
+    brandsReducer,
+    categoryReducer
 }

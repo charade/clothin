@@ -1,12 +1,20 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import { loadingReducer, discoverBtnReducer, suggestionsReducer, brandsReducer } from "./reducers";
+
+import {
+    loadingReducer,
+    discoverBtnReducer,
+    itemsReducer,
+    brandsReducer,
+    categoryReducer
+} from "./reducers";
 
 const reducers = combineReducers({
     isLoading : loadingReducer,
     discoverBtn : discoverBtnReducer,
-    suggestions : suggestionsReducer,
-    brands : brandsReducer
+    items : itemsReducer,
+    brands : brandsReducer,
+    category: categoryReducer
 })
 
 export const store = createStore(reducers, applyMiddleware(thunk));

@@ -3,8 +3,9 @@ import { makeStyles } from "@material-ui/core";
 export const useNavigationOptionsStyle = makeStyles(theme => ({
     list : {
         // border :'2px solid',
+        position : 'relative',
         display : 'flex',
-        justifyContent : 'center',
+        justifyContent : 'space-between',
         alignItems : 'center',
         listStyle : 'none',
         padding :0,
@@ -16,5 +17,5 @@ export const useNavigationOptionsStyle = makeStyles(theme => ({
         // color : 'white',
         margin : '15px'
         // border : '1px solid white'
-    }
+    },
 }))

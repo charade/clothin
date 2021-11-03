@@ -7,17 +7,18 @@ export const Media = () => {
 
     return(
         <List className = {classes.list}>
-            <ListItem>
-                <ShoppingCart />
+            <ListItem className = {classes.item}>
+                <ShoppingCart/>
+                Cart
             </ListItem>
-            <ListItem>
-                <LinkedIn />
+            <ListItem className = {classes.item}>
+                <LinkedIn/>
             </ListItem>
-            <ListItem>
+            <ListItem className = {classes.item}>
                 <Facebook />
             </ListItem>
-            <ListItem>
-                <Twitter />
+            <ListItem className = {classes.item}>
+                <Twitter/>
             </ListItem>
         </List>
     )

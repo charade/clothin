@@ -11,11 +11,11 @@ export const Caption = ({ children }  : CaptionProps) => {
 
     return(
         <div className ={classes.container}>
+            <img className = {classes.image} src = { Image } alt = 'poster'/>
             <p className = {classes.text}>
                 {/* each lines  */}
                 { children }
             </p>
-            <img className = {classes.image} src = { Image } alt = 'poster'/>
         </div>
     )
 }
