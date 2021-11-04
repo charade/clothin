@@ -8,9 +8,11 @@ import { useNavbarStyle } from "./Navbar.styles";
 import { useCaptionStyle } from "./Caption.styles";
 import { useMediaStyle }  from './Media.styles';
 import { useSearchBarStyle } from './SearchBar.styles';
-import { useSuggestionsStyle } from "./Suggestions.styles";
+import { useItemsStyle } from "./Items.styles";
 import { useCardStyle } from "./Card.styles";
 import { useBrandsStyle } from "./Brands.styles";
+import { useItemStyle } from "./Item.styles";
+import { useSelectFieldStyle } from "./SelectField.styles";
 
 export {
     useLandingStyles,
@@ -23,7 +25,9 @@ export {
     useCaptionStyle,
     useMediaStyle,
     useSearchBarStyle,
-    useSuggestionsStyle,
+    useItemsStyle,
     useCardStyle,
-    useBrandsStyle
+    useBrandsStyle,
+    useItemStyle,
+    useSelectFieldStyle
 }

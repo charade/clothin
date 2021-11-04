@@ -4,7 +4,7 @@ export const useCaptionStyle = makeStyles(theme => ({
     container : {
         position : 'relative',
         // border : '10px solid',
-        height : '50vh',
+        // height : '40vh',
         margin: '80px 50px 0 50px',
         display : 'flex',
         background : 'rgb(113, 113, 113)'

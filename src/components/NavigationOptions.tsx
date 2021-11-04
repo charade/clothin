@@ -11,7 +11,7 @@ export const NavigationOptions = () => {
     const popoverAnchor = useRef<HTMLLIElement>(null);
     const dispatch = useDispatch();
     const { setCategory } = bindActionCreators(categoryActionCreators, dispatch);
-
+    
     //dispatch category when clicking on li element
     const handleCategory = (e : React.MouseEvent<HTMLLIElement>) => {
         const target = e.target as HTMLLIElement;

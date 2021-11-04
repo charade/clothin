@@ -22,5 +22,8 @@ export const useNavbarStyle = makeStyles(theme => ({
         width : '100%',
         height : '100%'
     },
+    drawerRoot : {
+        width : '70%'
+    }
     
 }))
