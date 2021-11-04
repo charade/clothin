@@ -67,15 +67,15 @@ export const useItemStyle = makeStyles(theme => ({
         // border: '2px solid'
     },
     //container on divs containing inputs
-    inputFieldsContainer : {
+    selectFieldsContainer : {
         display : 'flex',
         margin : '30px 0',
         [theme.breakpoints.up('sm')] : {
             margin : '18% 0',
         },
-        '& > *' : {
-            marginRight : '30px',
-        }
-        // border: '2px solid'
+        //ne to force marge between formControlled select
+        '& > *:nth-child(n)' : {
+            marginRight : '40px',
+        },
     }
 }))

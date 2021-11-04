@@ -13,6 +13,8 @@ import { useCardStyle } from "./Card.styles";
 import { useBrandsStyle } from "./Brands.styles";
 import { useItemStyle } from "./Item.styles";
 import { useSelectFieldStyle } from "./SelectField.styles";
+import { useCartStyle } from "./Cart.styles";
+import { useCartItemStyle } from "./CartItem.styles";
 
 export {
     useLandingStyles,
@@ -29,5 +31,7 @@ export {
     useCardStyle,
     useBrandsStyle,
     useItemStyle,
-    useSelectFieldStyle
+    useSelectFieldStyle,
+    useCartStyle,
+    useCartItemStyle
 }

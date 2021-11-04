@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { ItemsType } from '../service'
 import { useItemStyle } from "../assets/styles/index.styles";
 import { motion, Variants } from 'framer-motion';
@@ -7,10 +7,13 @@ import { IconButton } from '@material-ui/core';
 import { SelectField } from "./SelectField";
 import { Button } from '@material-ui/core';
 import { ShoppingCart } from '@mui/icons-material';
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as CartActionCreators from "../state/actions-creators/cart-action-creators";
+import { Notification, NotificationType, NOTIFICATION_DEFAULT_VALUE } from "./Notification";
 
 const sizesArr: number[] = [36, 37,36, 40,41,42, 43, 44];
 const quantityArr : number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
 
 type DetailsProps = {
     layoutId : string;
@@ -18,7 +21,7 @@ type DetailsProps = {
     item : ItemsType | null,
 }
 
-const itemVariants =  {
+const itemVariants : Variants = {
     expand : {
         opacity : 1,
         transition : {
@@ -36,11 +39,32 @@ const itemVariants =  {
 
 export const Item = (props : DetailsProps) => {
     const classes = useItemStyle();
-    const [ size, setSize ] = useState<number>(sizesArr[0]);
-    const [quantity, setQuantity] = useState<number>(quantityArr[0])
-    const handleExpand = () => props.setExpand(false);
+    //items eu sizes
+    const [ size, setSize ] = useState<number>(0);
+    //quantity ordered
+    const [quantity, setQuantity] = useState<number>(0);
+    //notification component default severity === success / message === ''
+    const [ notification, setNotification] = useState<NotificationType>(NOTIFICATION_DEFAULT_VALUE);
+    //toogle notification
+    const [openNotification, setOpenNotification] = useState<boolean>(false)
+    const dispatch = useDispatch();
+    const { addToCart } = bindActionCreators(CartActionCreators, dispatch);
 
-    return(
+    //toggle item details pop-up
+    const handleExpand = () => props.setExpand(false);
+    //add a item to cart
+    const handleAddToCart = useCallback(() => {
+        if(size && quantity){
+            addToCart({item : props.item, quantity, size});
+            setNotification({severity : 'success', message : 'successfully added to your cart'});
+        }
+        else{
+            setNotification({severity : 'warning', message : 'you need to provide size and quantity'})
+        }
+        setOpenNotification(true);
+    },[size, quantity, props.item]);
+
+    return( 
         <motion.div
             className = {classes.container} 
             layoutId = { props.layoutId }
@@ -66,7 +90,7 @@ export const Item = (props : DetailsProps) => {
                     <span className = {classes.gender}>
                         Gender : {props.item?.gender}
                     </span>
-                    <div className = {classes.inputFieldsContainer}>
+                    <div className = {classes.selectFieldsContainer}>
                         <SelectField
                         //make difference between size & quantity
                             isSizeInput = { true }
@@ -85,11 +109,18 @@ export const Item = (props : DetailsProps) => {
                     <Button
                         startIcon = { <ShoppingCart /> }
                         variant = 'contained'
+                        onClick = { handleAddToCart }
                     >
                         Add to cart
                     </Button>
                 </div>
             </div>
+            <Notification 
+                open = {openNotification}
+                setOpen = {setOpenNotification}
+                message = { notification?.message }
+                severity = {notification?.severity}
+            />
         </motion.div>
     )
 }

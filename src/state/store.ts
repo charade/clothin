@@ -6,7 +6,8 @@ import {
     discoverBtnReducer,
     itemsReducer,
     brandsReducer,
-    categoryReducer
+    categoryReducer,
+    cartReducer
 } from "./reducers";
 
 const reducers = combineReducers({
@@ -14,7 +15,8 @@ const reducers = combineReducers({
     discoverBtn : discoverBtnReducer,
     items : itemsReducer,
     brands : brandsReducer,
-    category: categoryReducer
+    category: categoryReducer,
+    cart : cartReducer
 })
 
 export const store = createStore(reducers, applyMiddleware(thunk));

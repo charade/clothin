@@ -4,6 +4,9 @@ export enum Actions{
     FILTER_ITEMS = 'filterItems',
     LOAD_BRANDS = 'loadBrands',
     //choosing a category
-    SET_CATEGORY = 'setCategory'
+    SET_CATEGORY = 'setCategory',
+    ADD_TO_CART = 'addToCart',
+    REMOVE_FROM_CART = 'removeFromCart',
+    LOAD_CART = 'loadCart'
 }
 
