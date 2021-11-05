@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import { ItemsType } from '../service'
 import { useItemStyle } from "../assets/styles/index.styles";
 import { motion, Variants } from 'framer-motion';
@@ -11,6 +11,8 @@ import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as CartActionCreators from "../state/actions-creators/cart-action-creators";
 import { Notification, NotificationType, NOTIFICATION_DEFAULT_VALUE } from "./Notification";
+import { useSelector } from "react-redux";
+import { ReducerRootStateType } from "../state/store";
 
 const sizesArr: number[] = [36, 37,36, 40,41,42, 43, 44];
 const quantityArr : number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -39,7 +41,7 @@ const itemVariants : Variants = {
 
 export const Item = (props : DetailsProps) => {
     const classes = useItemStyle();
-    //items eu sizes
+    //eu items sizes
     const [ size, setSize ] = useState<number>(0);
     //quantity ordered
     const [quantity, setQuantity] = useState<number>(0);
@@ -49,9 +51,11 @@ export const Item = (props : DetailsProps) => {
     const [openNotification, setOpenNotification] = useState<boolean>(false)
     const dispatch = useDispatch();
     const { addToCart } = bindActionCreators(CartActionCreators, dispatch);
+    const cart = useSelector((store : ReducerRootStateType) => store.cart );
 
     //toggle item details pop-up
     const handleExpand = () => props.setExpand(false);
+
     //add a item to cart
     const handleAddToCart = useCallback(() => {
         if(size && quantity){
@@ -63,6 +67,15 @@ export const Item = (props : DetailsProps) => {
         }
         setOpenNotification(true);
     },[size, quantity, props.item]);
+
+    /**
+     * each time new item added to cart save changes in localStorage
+     * to persist datas locally
+     */
+    useEffect(() => {
+        //avoid erase saved cart when mounting app
+        localStorage.setItem('cart', JSON.stringify(cart));
+    },[cart]);
 
     return( 
         <motion.div

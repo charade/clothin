@@ -27,8 +27,15 @@ export const cartReducer = (state : CartItemType[] = [], action : CartActionsTyp
     switch(action.type){
         case Actions.LOAD_CART : 
         case Actions.ADD_TO_CART : 
-            return state.concat(action.payload as CartItemType[] | CartItemType)
-        case Actions.REMOVE_FROM_CART : return state.filter((_,id) => id !== action.payload);
+            state = state.concat(action.payload as CartItemType[] | CartItemType);
+            //Save cart when an item is added
+            localStorage.setItem('cart', JSON.stringify(state))
+            return state;
+        case Actions.REMOVE_FROM_CART : 
+            state = state.filter((_,id) => id !== action.payload);
+            //Save cart when an item is removed
+            localStorage.setItem('cart', JSON.stringify(state))
+            return state
         default : return state;
     }
 }

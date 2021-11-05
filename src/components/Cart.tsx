@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useCartStyle } from "../assets/styles/index.styles";
 import { useSelector } from "react-redux";
 import { ReducerRootStateType } from "../state/store";
