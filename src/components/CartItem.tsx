@@ -9,13 +9,14 @@ import { bindActionCreators } from "redux";
 type Props = {
     cartItem : CartItemType,
     itemKey : number
-}
+};
 
 export const CartItem = (props : Props) => {
     const classes = useCartItemStyle();
     const dispatch = useDispatch();
     const { removeFromCart } = bindActionCreators(cartActionCreators, dispatch);
 
+    //delete action
     const handleRemoveFromCart = () => removeFromCart(props.itemKey);
     
     return(
@@ -37,7 +38,6 @@ export const CartItem = (props : Props) => {
                     <span> size : {props.cartItem.size} </span>
                     <span> quantity : {props.cartItem.quantity} </span>
                 </div>
-
             </div>
 
             <div className = {classes.actionBlock}>

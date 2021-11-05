@@ -16,7 +16,7 @@ export const addToCart = (item : CartItemType) => {
 export const removeFromCart = (id : number) => {
     return (dispatch : Dispatch<CartActionsType>) => {
         dispatch({
-            type : Actions.ADD_TO_CART,
+            type : Actions.REMOVE_FROM_CART,
             payload : id
         })
     }

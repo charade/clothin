@@ -1,6 +1,5 @@
 import { useHomeStyle } from "../assets/styles/index.styles";
 import { Main } from "../components/Main";
-import { Landing} from "../components/Landing";
 import { useSelector } from "react-redux";
 import { ReducerRootStateType } from "../state/store";
 import { useEffect } from "react";
@@ -19,7 +18,6 @@ export const Home = () => {
 
     return(
         <div className = {classes.root}>
-            <Landing />
             <Main />
         </div>
     )

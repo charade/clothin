@@ -35,8 +35,8 @@ const Model = (props : ModelPropsT) => {
             camera.updateProjectionMatrix();
         }
         //when camera is close enough we can swicth to home scene
-        if(camera.zoom > 15)
-            props.setCanSwicthPage(true)
+        if(camera.zoom > 10)
+            props.setCanSwicthPage(true);
     });
 
     return (
