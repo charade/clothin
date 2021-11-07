@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 
 const request = axios.create({
-    baseURL : 'http://localhost:8080/sneakers-api'
+    baseURL : 'https://charles-ek-sneakers-api.herokuapp.com/v1'
 })
 export type ItemsType =  {
     id : string,
