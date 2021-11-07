@@ -1,0 +1,11 @@
+Model Information:
+* title:	shoes
+* source:	https://sketchfab.com/3d-models/shoes-f941406ee1904837b169f0cbbf1511f9
+* author:	Thunk3D scanner (https://sketchfab.com/Diana123456)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "shoes" (https://sketchfab.com/3d-models/shoes-f941406ee1904837b169f0cbbf1511f9) by Thunk3D scanner (https://sketchfab.com/Diana123456) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
