@@ -1,7 +1,6 @@
 import { LinkedIn, Facebook, Twitter, ShoppingCart,  } from '@mui/icons-material';
 import { List, ListItem, Badge, useMediaQuery } from '@mui/material';
 import { useMediaStyle } from "../assets/styles/index.styles";
-
 import { useSelector } from 'react-redux';
 import { ReducerRootStateType } from '../state/store';
 import { Cart } from "./Cart";
@@ -13,7 +12,6 @@ export const Media = () => {
     
     const cart = useSelector((store : ReducerRootStateType) => store.cart);
     const isScreenLarge = useMediaQuery('(min-width : 700px)');
-    
     //click on cart icon to open cart
     const handleOpenCart = () => setOpenCart(true);
 

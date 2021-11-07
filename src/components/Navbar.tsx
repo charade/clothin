@@ -2,7 +2,6 @@ import { useState } from "react";
 import { AppBar, Drawer, Toolbar, IconButton } from "@material-ui/core";
 import { useNavbarStyle } from "../assets/styles/index.styles"
 import { NavigationOptions } from './NavigationOptions';
-// import { SearchBar } from "./SearchBar";
 import { Media } from './Media';
 import { useMediaQuery } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';

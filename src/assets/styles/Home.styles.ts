@@ -6,8 +6,5 @@ export const useHomeStyle = makeStyles(theme => ({
         display :'flex',
         flexDirection : 'column',
         height: '100%',
-        // border : '2px solid blue'
-        
-
     }
 }))

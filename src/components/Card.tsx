@@ -1,7 +1,7 @@
 import { useCardStyle } from "../assets/styles/index.styles";
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 import { ItemsType } from "../service";
-import { motion, AnimateSharedLayout } from "framer-motion";
+import { motion } from "framer-motion";
 
 type CardProps = {
     itemKey : number,
@@ -14,7 +14,6 @@ export const Card = (props : CardProps) => {
     const classes = useCardStyle();
 
     const handleChosenItem = (e : React.MouseEvent<HTMLSpanElement>) => {
-        const target = e.target as HTMLSpanElement;
         //get item from store
         props.setItem(props.item);
         //change layoutId for animatesharedLayout

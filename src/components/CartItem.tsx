@@ -16,7 +16,7 @@ export const CartItem = (props : Props) => {
     const dispatch = useDispatch();
     const { removeFromCart } = bindActionCreators(cartActionCreators, dispatch);
 
-    //delete action
+    //on delete an item from cart
     const handleRemoveFromCart = () => removeFromCart(props.itemKey);
     
     return(

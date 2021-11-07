@@ -14,14 +14,11 @@ interface CartRemoveActionType {
     type : string,
     payload : number
 }
-
 interface CartLoadAction {
     type : string,
     payload : CartItemType[]
 }
-
 export type CartActionsType = CartAddActionsType | CartRemoveActionType | CartLoadAction;
-
 
 export const cartReducer = (state : CartItemType[] = [], action : CartActionsType ) => {
     switch(action.type){

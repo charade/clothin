@@ -4,7 +4,6 @@ export const useNavbarStyle = makeStyles(theme => ({
     root : {
         zIndex : 9,
         position : 'fixed',
-        // border: "2px solid red",
         height : '60px',
         background : 'rgba(255, 255, 255, .3)',
         overflow : 'hidden',

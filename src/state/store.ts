@@ -18,7 +18,5 @@ const reducers = combineReducers({
     category: categoryReducer,
     cart : cartReducer
 })
-
 export const store = createStore(reducers, applyMiddleware(thunk));
-
 export type ReducerRootStateType = ReturnType<typeof reducers>

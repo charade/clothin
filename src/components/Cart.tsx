@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useCartStyle } from "../assets/styles/index.styles";
 import { useSelector } from "react-redux";
 import { ReducerRootStateType } from "../state/store";
@@ -15,7 +14,7 @@ type CartPropsType = {
 export const Cart = (props : CartPropsType) => {
     const classes = useCartStyle();
     const cart = useSelector((store : ReducerRootStateType) => store.cart);
-
+    //on Close Cart drawer
     const handleClose = () => props.setOpen(false);
 
     return(

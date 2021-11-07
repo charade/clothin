@@ -35,12 +35,10 @@ export const useUnderlayStyle = makeStyles(theme => ({
         display : 'flex',
         flexDirection : 'column',
         alignItems : 'center',
-        // justifyContent : 'center',
         transform :'translateX(-50%)',
         zIndex : 10,
         width : '200px',
         height : '200px',
-        // border: '2px solid',
         '& > *' : {
             margin : '3px 0'
         },
@@ -58,7 +56,6 @@ export const useUnderlayStyle = makeStyles(theme => ({
         color : '#fff',
         cursor : 'pointer',
         transition : '.4s ease',
-        // borderBottom: '1px solid white',
         padding : '0 6px',
         borderRadius : '10px',
         '&:hover' : {
@@ -71,8 +68,6 @@ export const useUnderlayStyle = makeStyles(theme => ({
         height: '2px',
         width : '39%',
         position : 'relative',
-        // background : 'white',
-        // boxShadow : '0 0 5px white',
         '&::before, &::after' : {
             content : "''",
             position : 'absolute',

@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelectFieldStyle } from "../assets/styles/index.styles";
 import{MenuItem, SelectChangeEvent, InputLabel, Select, FormControl } from "@mui/material";
 
@@ -30,7 +29,6 @@ export const SelectField = (props : PropsType) => {
                 {props.items.map((item, key) => (
                     <MenuItem key ={key} value = {item}>{item}</MenuItem>
                 ))}
-
             </Select>
        </FormControl>
     )

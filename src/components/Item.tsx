@@ -67,7 +67,6 @@ export const Item = (props : DetailsProps) => {
         }
         setOpenNotification(true);
     },[size, quantity, props.item]);
-
     /**
      * each time new item added to cart save changes in localStorage
      * to persist datas locally

@@ -6,7 +6,6 @@ export const useSearchBarStyle = makeStyles(theme => ({
         height : '30px',
         width : '250px',
         borderRadius : '10px',
-        // border :'2px solid blue',
         overflow : 'hidden'
     },
     textField : {

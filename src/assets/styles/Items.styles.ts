@@ -15,7 +15,6 @@ export const useItemsStyle = makeStyles(theme => ({
     },
     container: {
         flex : 1,
-        // border :'3px solid yellowgreen',
         marginLeft : '30px',
         display : 'flex',
         flexWrap: 'wrap',

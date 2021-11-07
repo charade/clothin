@@ -14,9 +14,7 @@ export const useItemStyle = makeStyles(theme => ({
     },
     cardContainer : {
         position : 'relative',
-        // height : '40%',
         width : '100%',
-        // width : '50%',
         background : 'white',
         padding : ' 30px 20px',
         alignItems : 'center',
@@ -36,7 +34,6 @@ export const useItemStyle = makeStyles(theme => ({
         left : '2%',
     },
     closeIcon : {
-        // color : 'white',
         width : '80px',
         height: '80px',
         fontSize : '3rem'
@@ -64,7 +61,6 @@ export const useItemStyle = makeStyles(theme => ({
             width : '230px',
             height :'250px',
         },
-        // border: '2px solid'
     },
     //container on divs containing inputs
     selectFieldsContainer : {
@@ -73,7 +69,7 @@ export const useItemStyle = makeStyles(theme => ({
         [theme.breakpoints.up('sm')] : {
             margin : '18% 0',
         },
-        //ne to force marge between formControlled select
+        //need to force marge between formControlled select
         '& > *:nth-child(n)' : {
             marginRight : '40px',
         },

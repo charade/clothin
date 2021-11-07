@@ -21,13 +21,11 @@ export const useCardStyle = makeStyles(theme => ({
         flexDirection : 'column',
         alignItems : 'center',
         justifyContent : 'center',
-        // border :'2px solid blue',
     },
     brand : {
         fontSize : '2rem',
         color : 'rgba(0, 0, 0, .5)',
         fontWeight : 700,
-        // border : '2px solid'
     },
     price : {
         fontSize : '1.8rem'

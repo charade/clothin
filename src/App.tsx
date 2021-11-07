@@ -10,7 +10,6 @@ import { Landing} from "./components/Landing";
 function App() {
   const dispatch = useDispatch();
   const { loadCart } = bindActionCreators(cartActionCreators, dispatch);
-
   //load saved cart
   useEffect(() => {
     const cart = localStorage.getItem('cart');
@@ -20,8 +19,6 @@ function App() {
   return (
     <Router>
       <Navbar />
-      {/* glass effect behind nav */}
-      {/* <BlurredNavPane /> */}
       <Switch>
         <Route exact path = '/' component = { Landing } />
         <Route  path = '/home' component = { Home } />

@@ -3,14 +3,10 @@ import { makeStyles } from "@material-ui/core"
 export const useCartItemStyle = makeStyles(theme => ({
     container : {
         display : 'flex',
-        // border :'1px solid rgba(0, 0, 0, .7)',
-        // width : '73%',
-        // padding: '10px',
         marginBottom : '30px',
         alignItems :'center'
     },
     imageContainer: {
-        // background : 'rgba(0, 0, 0, .025)',
         position : 'relative',
         display : 'none',
         [theme.breakpoints.up('xs')]: {
@@ -22,7 +18,6 @@ export const useCartItemStyle = makeStyles(theme => ({
             borderRadius: '10px',
             boxShadow: '0 0 3px rgba(0, 0, 0, .4)',
         },
-        // margin : '10px'
     },
     image : {
         position : 'absolute',
@@ -33,7 +28,6 @@ export const useCartItemStyle = makeStyles(theme => ({
     },
     infosContainer: {
         flex : 2,
-        // border :'2px solid red',
         '& >*' : {
             margin : '5px 30px'
         }
@@ -59,8 +53,6 @@ export const useCartItemStyle = makeStyles(theme => ({
         [theme.breakpoints.up('sm')] : {
             fontSize :'1.6rem',
         },
-
-        // border : '2px solid blue'
         '& > *' :{
             marginRight : '30px'
         }
