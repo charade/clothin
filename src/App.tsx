@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import { Home } from './pages/Home';
-import { Navbar } from "./components/Navbar";
 import * as cartActionCreators from './state/actions-creators/cart-action-creators';
 import { bindActionCreators } from "redux"; 
 import { Landing} from "./components/Landing";
@@ -18,7 +17,6 @@ function App() {
 
   return (
     <Router>
-      <Navbar />
       <Switch>
         <Route exact path = '/' component = { Landing } />
         <Route  path = '/home' component = { Home } />
