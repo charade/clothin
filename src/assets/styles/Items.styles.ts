@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core';
 
 export const useItemsStyle = makeStyles(theme => ({
     mainContainer : {
-        // border : '2px solid red',
+        position :'relative',
         display : 'flex',
         flexDirection : 'column'
     },
@@ -11,7 +11,6 @@ export const useItemsStyle = makeStyles(theme => ({
         fontWeight: 700,
         position : 'relative',
         margin : '20px 50px',
-       
     },
     container: {
         flex : 1,

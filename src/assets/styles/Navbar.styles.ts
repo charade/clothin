@@ -5,11 +5,11 @@ export const useNavbarStyle = makeStyles(theme => ({
         zIndex : 9,
         position : 'fixed',
         height : '60px',
-        background : 'rgba(255, 255, 255, .3)',
+        background : '#4A4A4A',
         overflow : 'hidden',
         width :'100%',
         boxShadow : 'none',
-        borderBottom :'2px solid rgba(255, 255, 255, .4)',
+        borderBottom :'2px solid rgba(255, 255, 255, .7)',
         display : 'flex',
         justifyContent : 'flex-end',
         backdropFilter : 'blur(20px)'

@@ -24,8 +24,6 @@ const Model = (props : ModelPropsT) => {
             const y =   20 * Math.cos(time + Math.PI/2) + 20 ;
             const vec = new Vector3(x, y, 300);
             modelRef.current.position.lerp(vec, 0.02);
-            // camera.rotation.set(x, y, 0);
-            // camera.updateProjectionMatrix()
         }
         //animation zoom in camera before page transition
         //move camera on y axis to ajust shoe position

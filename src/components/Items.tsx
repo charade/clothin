@@ -9,6 +9,7 @@ import { ItemsType } from "../service";
 import { useEffect } from "react";
 import { Item } from "./Item";
 import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import { Loading } from "./Loading";
 
 export const Items = () => {
     const classes = useItemsStyle();
@@ -21,6 +22,7 @@ export const Items = () => {
     //when show button clicked it expands sharing layout component
     const [ expand, setExpand ] = useState<boolean>(false);
 
+    //load items on category changes default caterory is most popular
     useEffect(() => {
         filterItems(category);
     },[category]);
@@ -28,8 +30,9 @@ export const Items = () => {
     return(
         <div className = {classes.mainContainer} >
             <h2 className = {classes.title}> { category } </h2>
-            <AnimateSharedLayout>
+            <AnimateSharedLayout type="crossfade">
                 <div className = {classes.container} >
+                    { !items.length && <Loading /> }
                     {
                         (items as ItemsType[]).map((item, i) => {
                             return<Card 

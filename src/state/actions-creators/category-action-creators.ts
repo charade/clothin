@@ -1,5 +1,5 @@
 import { Actions } from "../actions";
-import { CategoryActionType } from "../reducers/categotyReducer";
+import { CategoryActionType } from "../reducers/categoryReducer";
 import { Dispatch } from "react";
 
 export const setCategory = (category : string) =>{

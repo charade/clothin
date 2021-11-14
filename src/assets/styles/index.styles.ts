@@ -15,6 +15,7 @@ import { useItemStyle } from "./Item.styles";
 import { useSelectFieldStyle } from "./SelectField.styles";
 import { useCartStyle } from "./Cart.styles";
 import { useCartItemStyle } from "./CartItem.styles";
+import { useLoadingStyle } from './Loading.styles';
 
 export {
     useLandingStyles,
@@ -33,5 +34,6 @@ export {
     useItemStyle,
     useSelectFieldStyle,
     useCartStyle,
-    useCartItemStyle
+    useCartItemStyle,
+    useLoadingStyle
 }
