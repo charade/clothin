@@ -18,7 +18,6 @@ export const useItemStyle = makeStyles(theme => ({
         alignItems : 'center',
         display : 'flex',
         flexDirection : 'column',
-        // overflow : 'hidden',
         [theme.breakpoints.up('md')] : {
             borderRadius : '10px',
         },
@@ -43,7 +42,6 @@ export const useItemStyle = makeStyles(theme => ({
         [theme.breakpoints.up('md')]: {
             flexDirection :'row'
         },
-        border : '2px solid red'
     },
     closeBtn : {
         width :'50px',
