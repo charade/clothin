@@ -10,7 +10,7 @@ export const useItemStyle = makeStyles(theme => ({
         display: 'flex',
         paddingTop : '73px',
         justifyContent : 'center',
-        background : 'rgba(0, 0, 0, .9)',
+        background : 'rgba(0, 0, 0, .8)',
     },
     cardContainer : {
         width : '100%',
@@ -27,12 +27,15 @@ export const useItemStyle = makeStyles(theme => ({
     },
     upperContainer : {
         display : 'flex',
-        margin : '20px',
+        margin : '20px 0 30px 0',
         padding: '30px',
         width : '100%',
         height : "50px",        
         justifyContent : "space-between",
-        alignItems :'center'
+        alignItems :'center',
+        [theme.breakpoints.up('sm')] : {
+            marginBottom :'60px'
+        }
     },
     mainContainer : {
         display: 'flex',
@@ -40,7 +43,8 @@ export const useItemStyle = makeStyles(theme => ({
         alignItems : 'center',
         flexDirection : "column",
         [theme.breakpoints.up('md')]: {
-            flexDirection :'row'
+            flexDirection :'row',
+            justifyContent : 'space-around'
         },
     },
     closeBtn : {
@@ -71,7 +75,6 @@ export const useItemStyle = makeStyles(theme => ({
         width : '150px',
         height :'150px',
         [theme.breakpoints.up('sm')]:{
-            // margin : '10px 70px 0 40px',
             width : '230px',
             height :'250px',
         },
