@@ -83,47 +83,51 @@ export const Item = (props : DetailsProps) => {
             exit = "close"
         >
             <div className = {classes.cardContainer}>
-                <IconButton className = {classes.closeBtn} onClick = {handleExpand}>
-                    <HighlightOffIcon className = {classes.closeIcon} />
-                </IconButton>
-                <span className = {classes.price}> {props.item?.price} € </span>
-                <img
-                    className = { classes.image } 
-                    src = {props.item?.imageUrl} 
-                    alt = {`${props.item?.brandsName}-shoe`}
-                />
-                <div className = {classes.infoContainer}>
-                    <h2 className = {classes.brand} >{ props.item?.brandsName } </h2>
-                    <p className = {classes.description}>
-                        {props.item?.name}
-                    </p>
-                    <span className = {classes.gender}>
-                        Gender : {props.item?.gender}
-                    </span>
-                    <div className = {classes.selectFieldsContainer}>
-                        <SelectField
-                        //make difference between size & quantity
-                            isSizeInput = { true }
-                            items = {sizesArr}
-                            set = { setSize }
-                            label = 'size'
-                            value = {size}
-                        />
-                        <SelectField 
-                            items = {quantityArr}
-                            set = { setQuantity }
-                            label = 'quantity'
-                            value = {quantity}
-                        />
-                    </div>
-                    <Button
-                        startIcon = { <ShoppingCart /> }
-                        variant = 'contained'
-                        onClick = { handleAddToCart }
-                    >
-                        Add to cart
-                    </Button>
+                <div className =  {classes.upperContainer}>
+                    <IconButton className = {classes.closeBtn} onClick = {handleExpand}>
+                        <HighlightOffIcon className = {classes.closeIcon} />
+                    </IconButton>
+                    <span className = {classes.price}> {props.item?.price} € </span>
                 </div>
+               <div className = {classes.mainContainer}>
+                    <img
+                        className = { classes.image } 
+                        src = {props.item?.imageUrl} 
+                        alt = {`${props.item?.brandsName}-shoe`}
+                    />
+                    <div className = {classes.infoContainer}>
+                        <h2 className = {classes.brand} >{ props.item?.brandsName } </h2>
+                        <p className = {classes.description}>
+                            {props.item?.name}
+                        </p>
+                        <span className = {classes.gender}>
+                            Gender : {props.item?.gender}
+                        </span>
+                        <div className = {classes.selectFieldsContainer}>
+                            <SelectField
+                            //make difference between size & quantity
+                                isSizeInput = { true }
+                                items = {sizesArr}
+                                set = { setSize }
+                                label = 'size'
+                                value = {size}
+                            />
+                            <SelectField 
+                                items = {quantityArr}
+                                set = { setQuantity }
+                                label = 'quantity'
+                                value = {quantity}
+                            />
+                        </div>
+                        <Button
+                            startIcon = { <ShoppingCart /> }
+                            variant = 'contained'
+                            onClick = { handleAddToCart }
+                        >
+                            Add to cart
+                        </Button>
+                    </div>
+               </div>
             </div>
             <Notification 
                 open = {openNotification}

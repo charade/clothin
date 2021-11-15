@@ -13,29 +13,37 @@ export const useItemStyle = makeStyles(theme => ({
         background : 'rgba(0, 0, 0, .9)',
     },
     cardContainer : {
-        position : 'relative',
         width : '100%',
         background : 'white',
-        padding : ' 30px 20px',
         alignItems : 'center',
         display : 'flex',
         flexDirection : 'column',
         overflow : 'hidden',
         [theme.breakpoints.up('md')] : {
             borderRadius : '10px',
-            flexDirection : 'row',
-        }
+        },
     },
     infoContainer: {
     },
+    upperContainer : {
+        display : 'flex',
+        margin : '20px',
+        padding: '30px',
+        width : '100%',
+        height : "50px",        
+        justifyContent : "space-between",
+        alignItems :'center'
+    },
+    mainContainer : {
+        display: 'flex',
+        flexDirection : "column",
+        [theme.breakpoints.up('md')]: {
+            flexDirection :'row'
+        }
+    },
     closeBtn : {
-        position :'absolute',
-        top : '-20px',
-        left : "-25px",    
-        width :'40px',
-        height: '40px',
-        padding: '5px',
-        margin : '30px',
+        width :'50px',
+        height: '50px',
         "& > *": {
             width :'100%',
             height : "100%"
@@ -46,9 +54,6 @@ export const useItemStyle = makeStyles(theme => ({
         minHeight : '100%',
     },
     price : {
-        position : 'absolute',
-        top : '40px',
-        right : '20px',
         fontSize: '2rem'
     },
     brand : {
