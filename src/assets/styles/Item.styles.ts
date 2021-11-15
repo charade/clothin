@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core";
 export const useItemStyle = makeStyles(theme => ({
     container : {
         position : 'fixed',
-        top : 0,
+        bottom : 0,
         left : 0,
         width : '100%',
         height : '100%',
@@ -18,12 +18,13 @@ export const useItemStyle = makeStyles(theme => ({
         alignItems : 'center',
         display : 'flex',
         flexDirection : 'column',
-        overflow : 'hidden',
+        // overflow : 'hidden',
         [theme.breakpoints.up('md')] : {
             borderRadius : '10px',
         },
     },
     infoContainer: {
+        paddingLeft : '10px'
     },
     upperContainer : {
         display : 'flex',
@@ -36,10 +37,13 @@ export const useItemStyle = makeStyles(theme => ({
     },
     mainContainer : {
         display: 'flex',
+        width :'100%',
+        alignItems : 'center',
         flexDirection : "column",
         [theme.breakpoints.up('md')]: {
             flexDirection :'row'
-        }
+        },
+        border : '2px solid red'
     },
     closeBtn : {
         width :'50px',
@@ -57,7 +61,7 @@ export const useItemStyle = makeStyles(theme => ({
         fontSize: '2rem'
     },
     brand : {
-        fontSize : '2rem'
+        fontSize : '2rem',
     },
     description : {
         fontSize :'1.8rem'
@@ -66,10 +70,10 @@ export const useItemStyle = makeStyles(theme => ({
         fontSize : '1.7rem'
     },
     image : {
-        width : '200px',
-        height :'230px',
-        margin : '10px 70px 0 40px',
+        width : '150px',
+        height :'150px',
         [theme.breakpoints.up('sm')]:{
+            // margin : '10px 70px 0 40px',
             width : '230px',
             height :'250px',
         },
