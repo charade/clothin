@@ -1,7 +1,6 @@
-import { useRef } from "react";
+import { Suspense, useRef } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import  { useGLTF, OrbitControls } from '@react-three/drei';
-import { Suspense } from "react";
 import  { Group, Vector3 } from 'three';
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { useShoeStyle } from "../assets/styles/index.styles"
@@ -38,9 +37,11 @@ const Model = (props : ModelPropsT) => {
     });
 
     return (
-        <group dispose = {null} position = {[0, 0, 500]} ref = {modelRef} rotation = {[0, 0, -.3]}>
-            <primitive object = {model.scene}/>
-        </group>
+        <Suspense fallback = {null}>
+            <group dispose = {null} position = {[0, 0, 500]} ref = {modelRef} rotation = {[0, 0, -.3]}>
+                <primitive object = {model.scene}/>
+            </group>
+        </Suspense>
     )
 };
 
