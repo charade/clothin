@@ -31,7 +31,7 @@ export const Navbar = () => {
 
                     {isScreenLarge ?
                         <NavigationOptions /> :
-                        <MenuIcon  onClick = { toggleOpenBurgerMenu }/>
+                        <MenuIcon  onClick = { toggleOpenBurgerMenu } style  = {{color :'white'}}/>
                     }
 
                     <Media />
