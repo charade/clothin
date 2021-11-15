@@ -28,15 +28,22 @@ export const useItemStyle = makeStyles(theme => ({
     },
     infoContainer: {
     },
-    closeBtn:{
-        position : 'absolute',
-        top : '2%',
-        left : '2%',
+    closeBtn : {
+        position :'absolute',
+        top : '-20px',
+        left : "-25px",    
+        width :'40px',
+        height: '40px',
+        padding: '5px',
+        margin : '30px',
+        "& > *": {
+            width :'100%',
+            height : "100%"
+        }
     },
     closeIcon : {
-        width : '80px',
-        height: '80px',
-        fontSize : '3rem'
+        minWidth :'100%',
+        minHeight : '100%',
     },
     price : {
         position : 'absolute',

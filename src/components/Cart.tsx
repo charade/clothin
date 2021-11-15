@@ -4,7 +4,7 @@ import { ReducerRootStateType } from "../state/store";
 import { CartItem } from "./CartItem";
 import { CartItemType } from "../state/reducers/cartReducer";
 import { Drawer, IconButton } from "@mui/material";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';;
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 type CartPropsType = {
     open : boolean

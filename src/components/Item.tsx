@@ -52,10 +52,8 @@ export const Item = (props : DetailsProps) => {
     const dispatch = useDispatch();
     const { addToCart } = bindActionCreators(CartActionCreators, dispatch);
     const cart = useSelector((store : ReducerRootStateType) => store.cart );
-
     //toggle item details pop-up
     const handleExpand = () => props.setExpand(false);
-
     //add a item to cart
     const handleAddToCart = useCallback(() => {
         if(size && quantity){
@@ -72,7 +70,7 @@ export const Item = (props : DetailsProps) => {
      * to persist datas locally
      */
     useEffect(() => {
-        //avoid erase saved cart when mounting app
+        //avoid eras saved cart when mounting app
         localStorage.setItem('cart', JSON.stringify(cart));
     },[cart]);
 
