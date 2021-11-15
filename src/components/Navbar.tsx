@@ -25,7 +25,7 @@ export const Navbar = () => {
                 color = 'transparent'
             >
                 <Toolbar component = 'div' className = {classes.toolbar}>
-                    <IconButton onClick = {handleRedirectToHome}>
+                    <IconButton onClick = {handleRedirectToHome} style  = {{color :'white'}}>
                         <HomeIcon />
                     </IconButton>
 

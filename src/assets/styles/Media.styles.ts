@@ -13,5 +13,6 @@ export const useMediaStyle = makeStyles(theme => ({
         padding :0,
         margin : '10px',
         cursor : 'pointer',
+        color: 'white'
     }
 }))
